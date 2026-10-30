@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SVG PowerPoint Studio — integrated single-app edition
 
 A single Flask application that creates presentation outlines, generates slide content, creates SVG illustrations, previews slides, and exports PowerPoint files. **There is no separate SVG Visual Studio server or second Flask application to run.** Both slide-content generation and SVG illustration generation call the same configured Ollama instance directly from `app.py`.
@@ -92,3 +93,7 @@ To use another model, change `OLLAMA_MODEL` to a model available in your Ollama 
 - Ollama must be running and the selected model must be available. The app returns a visible error when generation fails rather than silently substituting generic content.
 - The Data/Chart layout is illustrative; it must not be treated as measured data unless real values are provided.
 - SVG illustrations are generated from structured shape data. They are not raster image-generation-model outputs or photographs.
+=======
+# ppt-generator
+create ppt generations with svg images
+>>>>>>> 4571c5c48c02e5409bae146a9afd1d0e68e7b89b
