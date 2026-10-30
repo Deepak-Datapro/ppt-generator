@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SVG Visual Studio</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header><div><p class="eyebrow">OLLAMA · VECTOR STORYBOARD</p><h1>SVG Visual Studio</h1><p class="sub">Create cartoon stories, diagrams and shape-based visual explainers with Ollama.</p></div><span id="connection" class="status">Checking Ollama…</span></header>
+<main>
+<section class="controls">
+<label for="mode">Creation mode</label>
+<select id="mode"><option value="story" selected>Story mode — cartoon comic</option><option value="diagram">Diagram mode — SVG diagrams</option></select>
+<label for="prompt" style="margin-top:14px">Idea or description</label><textarea id="prompt" rows="3" placeholder="Example: Two friends invent a robot to clean their classroom."></textarea>
+<div id="storyOptions" class="control-row"><div><label for="panelCount">Panel grid</label><select id="panelCount"><option value="2">2 panels</option><option value="4" selected>4 panels</option><option value="6">6 panels</option><option value="8">8 panels</option></select></div><button id="generate">Generate story</button></div>
+<div id="diagramOptions" class="control-row" hidden><div><label for="diagramType">Diagram type</label><select id="diagramType"><option value="flowchart">Flowchart</option><option value="pie">Exploded pie chart</option><option value="bar">Bar chart</option><option value="venn">Venn diagram</option><option value="shapes">Shape-based visual explainer</option></select></div><button id="generateDiagram">Generate diagram</button></div>
+<div class="legend"><span><i class="legend-thought"></i> Thought cloud</span><span><i class="legend-speech"></i> Discussion bubble</span><span><i class="legend-person"></i> Unique cartoon character</span><span>Flowcharts · Pie · Bar · Venn · Shape illustrations</span></div>
+<p id="message" role="status"></p>
+</section>
+<section class="workspace"><div class="canvas-heading"><div><h2 id="comicTitle">Your creation</h2><p>SVG output · scalable · downloadable</p></div><div class="actions"><button class="secondary" id="downloadSvg" disabled>SVG</button><button class="secondary" id="downloadPng" disabled>PNG</button><button class="secondary" id="downloadJpg" disabled>JPG</button><button class="secondary" id="downloadWebp" disabled>WebP</button><button class="secondary" id="downloadJson" disabled>Story JSON</button></div></div><div id="preview" class="preview"><div class="empty"><div class="empty-icon">▦</div><strong>Your visual will appear here</strong><p>Choose a visual type, enter a prompt, and generate.</p></div></div></section>
+</main>
+<footer>Model: <code>{{ model }}</code> · Local Ollama API: <code>http://localhost:11434</code></footer>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>

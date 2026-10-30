@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SVG PowerPoint Studio</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<header><div><div class="brand">SLIDE<span>FORGE</span></div><small>AI PRESENTATION STUDIO</small></div><div class="status" id="status">Checking services…</div></header>
+<main>
+<aside class="sidebar">
+ <h2>1. Presentation brief</h2>
+ <label>Presentation topic</label><textarea id="topic" rows="3" placeholder="e.g. Explain machine learning, bias and variance in detail"></textarea>
+ <div class="two"><div><label>Slides</label><select id="slideCount"><option>5</option><option selected>8</option><option>10</option><option>12</option><option>15</option><option>20</option></select></div><div><label>Audience</label><select id="audience"><option>General audience</option><option>Executives</option><option>Students</option><option>Technical team</option><option>Customers</option></select></div></div>
+ <label>Additional direction</label><textarea id="instructions" rows="2" placeholder="Depth, tone, examples, learning goals…"></textarea>
+ <label>Default theme</label><select id="theme"></select>
+ <button class="primary" id="makeOutline">Create slide outline</button>
+ <div class="divider"></div>
+ <section id="outlinePanel" class="hidden">
+  <h2>2. Review and approve outline</h2>
+  <p class="hint">Edit slide titles, purpose, key points, layout and visual requirement before approving.</p>
+  <div id="outlineList"></div>
+  <button class="primary" id="approveOutline">Approve outline & generate slides</button>
+  <button class="secondary" id="rebuildOutline">Regenerate outline</button>
+ </section>
+ <div class="divider"></div>
+ <section id="editorPanel" class="hidden">
+  <h2>3. Refine selected slide</h2>
+  <label>Slide layout</label><select id="slideTemplate"></select>
+  <label>Updated slide prompt</label><textarea id="redoPrompt" rows="3" placeholder="e.g. Explain the bias-variance tradeoff with a concrete model example."></textarea>
+  <button id="redo" class="secondary">Regenerate slide content</button>
+  <label>SVG visual prompt</label><textarea id="visualPrompt" rows="3" placeholder="Describe the diagram or illustration to generate…"></textarea>
+  <button id="visualBtn" class="secondary">Generate / regenerate SVG visual</button>
+  <button id="removeVisual" class="secondary">Remove visual from slide</button>
+  <button id="save" class="primary save">Save as PowerPoint (.pptx)</button>
+  <p class="hint">Changing the layout or visual prompt affects only the selected slide.</p>
+ </section>
+</aside>
+<section class="workspace">
+ <div class="workspace-head"><div><h1 id="deckTitle">Your presentation</h1><p id="deckMeta">Create an outline first. Full slide content is generated only after approval.</p></div><div class="head-actions"><button id="prev" disabled>←</button><span id="slideCounter">0 / 0</span><button id="next" disabled>→</button></div></div>
+ <div class="preview-wrap"><div id="preview" class="slide-preview empty"><div><strong>Slide preview</strong><p>Approve an outline to generate content and preview.</p></div></div></div>
+ <div class="thumb-head"><h3>Slides</h3><span id="thumbInfo"></span></div><div id="thumbs" class="thumbs"></div>
+</section>
+</main><div id="toast" role="status"></div><script src="/static/app.js"></script></body></html>
